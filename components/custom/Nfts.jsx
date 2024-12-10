@@ -21,10 +21,10 @@ const Nfts = ({ allNft }) => {
                         >
                             <Masonry>
                                 {
-                                    allNft?.filter(item => item?.image?.cachedUrl != "")?.map((item, index) => {
+                                    allNft?.filter(item => item?.image?.cachedUrl != "")?.map((item,index) => {
                                         return (
                                             <>
-                                                <motion.div className='border-white/45 m-4 border-2 rounded-2xl overflow-hidden cursor-pointer flex justify-center items-center'
+                                                <motion.div className='border-white/45 m-4 border-2 rounded-2xl overflow-hidden cursor-pointer flex justify-center items-center relative group '
                                                     key={index}
                                                     initial={{
                                                         backgroundColor: "transparent"
@@ -37,13 +37,11 @@ const Nfts = ({ allNft }) => {
                                                 >
 
                                                     <img src={item?.image?.cachedUrl} alt="" className='transition-all duration-300 hover:blur-none blur-sm ' />
-                                                    <motion.div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0"
-                                                        animate={{ transition: { duration: 1 } }}
+                                                    <div className=" transition-all duration-300 absolute group-hover:opacity-0 block "
+                                                    
                                                     >
-                                                        <h3 className="text-white text-xl font-bold">
-                                                            work
-                                                        </h3>
-                                                    </motion.div>
+                                                         {item?.name || `NFT #${item?.tokenId}`}
+                                                        </div>
                                                 </motion.div>
                                             </>
                                         )
