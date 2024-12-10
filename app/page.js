@@ -12,7 +12,7 @@ export default function Home() {
 
   const { toast } = useToast()
   const config = {
-    apiKey: "rlq7PRbfz44G8APe9qA8-xR6B99NGnNm",
+    apiKey: process.env.ALCHEMY_API_KEY,
     network: Network.ETH_MAINNET,
   };
 
