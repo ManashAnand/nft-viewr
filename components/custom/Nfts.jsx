@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import { motion } from "motion/react"
 import ClientOnly from './ClientOnly';
+import { useSpring } from "motion/react"
 
 const Nfts = ({ allNft }) => {
     const [open, setOpen] = useState(null)
@@ -64,7 +65,7 @@ const Nfts = ({ allNft }) => {
 
                                 <motion.div
                                     initial={{ x: Math.floor(Math.random() * 2001) - 1000, y: Math.floor(Math.random() * 2001) - 1000 }}
-                                    animate={{ x: 0, y: 0, transition: { duration: 1 } }}
+                                    animate={{ x: 0, y: 0, transition: { duration: 1, type: "spring", bounce: 0.45 } }}
                                     className=" "
                                 >
 
