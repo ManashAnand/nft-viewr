@@ -66,7 +66,6 @@ export default function Home() {
                 x: [-1100, 200, 0], rotate: [0, 0, 30, 0], transition: {
                   duration: 1, visualDuration: 0.5,
                   bounce: 0.25,
-                  type:"spring"
                 }
               }}
 
